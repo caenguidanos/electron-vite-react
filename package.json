@@ -1,0 +1,27 @@
+{
+  "name": "electron-vite-react",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev:web": "vite",
+    "dev:electron": "nodemon --signal SIGINT --ext js,ts --exec 'pnpm build:electron && pnpm start:electron' --watch src-electron",
+    "build:web": "tsc && vite build",
+    "build:electron": "node tools/build/electron.mjs",
+    "start:electron": "electron dist-electron/main.cjs"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.39",
+    "@types/react-dom": "17.0.11",
+    "@vitejs/plugin-react": "1.2.0",
+    "electron": "17.0.0",
+    "esbuild": "0.14.21",
+    "nodemon": "2.0.15",
+    "tiny-glob": "0.2.9",
+    "typescript": "4.5.5",
+    "vite": "2.8.1"
+  }
+}
